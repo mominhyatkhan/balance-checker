@@ -13,3 +13,4 @@ export const GetETHExchangeRate = async () => {
     .then((result) => {return(result.data.rates.ETH)})
     .catch((error) => {return("error", error)});
 }
+console.log("test");
