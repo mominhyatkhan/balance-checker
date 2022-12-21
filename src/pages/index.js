@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import useBalance from "../actions/useBalance";
 
 export default function Home() {
-  const [selectedToken, setSelectedToken] = useState(TokenList[0]);
+  const [selectedToken, setSelectedToken] = useState(TokenList[1]);
   const [selectedWallet, setSelectedWallet] = useState(Wallets[0]);
 
   const { activate, account } = useWeb3React();
@@ -24,7 +24,8 @@ export default function Home() {
     selectedToken.address,
     selectedToken.decimals,
     checkAccount,
-    selectedToken.name
+    selectedToken.symbol,
+    selectedWallet.name
   );
 
   return (
@@ -35,14 +36,18 @@ export default function Home() {
         </div>
         <div className="input-box">
           <button onClick={() => activate(injected)}>Connect to Wallet</button>
-          <hr color="green" />
+          <hr className={account ? "isValid" : "isNotValid"} />
           {account ? (
-            <i>Your Wallet : {account}</i>
+            <i>
+              Your Wallet :{" "}
+              <i className={account ? "isValid" : "isNotValid"}>{account}</i>
+            </i>
           ) : (
-            <i>No wallet is connected</i>
+            <i className={account ? "isValid" : "isNotValid"}>
+              No Wallet is connected
+            </i>
           )}
-          <hr color="green" />
-          {/* <br /> */}
+          <hr className={account ? "isValid" : "isNotValid"} />
           <label>Select Validator Wallet Address :</label>
           <form onSubmit={submitHandler}>
             <select
@@ -59,7 +64,7 @@ export default function Home() {
           <label>Select the Token</label>
           <select onChange={(e) => setSelectedToken(TokenList[e.target.value])}>
             {TokenList.map((token, index) => (
-              <option value={index} key={token.address}>
+              <option value={index} key={token.address} selected={token.name === "Ethereum"}>
                 {token.name}
               </option>
             ))}
@@ -68,10 +73,8 @@ export default function Home() {
           <label>
             <h2>{`Balance : $${balance}`}</h2>
           </label>
-          <span
-            style={balance ? { color: "rgb(57, 107, 0)" } : { color: "red" }}
-          >
-            {balance ? "Address matched" : "Try with different token"}
+          <span className={balance ? "isValid" : "isNotValid"}>
+            {balance ? "Address matched." : "Please select the correct token."}
           </span>
         </div>
       </div>

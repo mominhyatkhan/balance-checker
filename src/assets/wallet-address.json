@@ -17,7 +17,7 @@
   },
   {
     "name": "Wallet 5",
-    "address": "0xffa74a26bf87a32992bb4be080467bb4a8019e"
+    "address": "0xdc80905cafeda39cb19a566baeef52472848e82f"
   },
   {
     "name": "Wallet 6",
@@ -32,7 +32,16 @@
     "address": "0xc2a29b4e9fa71e9033a52611544403241c56ac5e"
   },
   {
-    "name": "Wallet 9",
+    "name": "Wallet 9 elrond",
     "address": "erd1jva7ad5587ek3zyvm4mzdvevecfz5834xgccy2pmqgjp7vj4ft8sppaxqx"
+  },
+  {
+    "name": "Wallet 10 ton",
+    "address": "Ef_mlXHnufWO3-vvopflR_NpIFMiidvp_xt20Qf8usMBBKzB"
+  },
+  {
+    "name": "Wallet 11 scrt",
+    "address": "secret1q0rth4fu4svxnw63vjd7w74nadzsdp0f23e0uy"
   }
+  
 ]

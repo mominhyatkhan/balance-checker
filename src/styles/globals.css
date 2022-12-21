@@ -129,7 +129,7 @@ html {
 .input-box button {
   outline: none;
   display: block;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.068);
   width: 100%;
   border: 0;
   border-radius: 4px;
@@ -141,4 +141,12 @@ html {
   font-weight: 500;
   line-height: inherit;
   transition: 0.3s ease;
+}
+
+.isValid {
+  color: rgb(57, 107, 0);
+}
+
+.isNotValid {
+  color : red
 }
