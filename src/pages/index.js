@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import useBalance from "../actions/useBalance";
 
 export default function Home() {
-  const [selectedToken, setSelectedToken] = useState(TokenList[1]);
+  const [selectedToken, setSelectedToken] = useState(TokenList[0]);
   const [selectedWallet, setSelectedWallet] = useState(Wallets[0]);
 
   const { activate, account } = useWeb3React();
