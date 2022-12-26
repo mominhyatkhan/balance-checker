@@ -26,6 +26,7 @@ export default function useBalance(
   const { account, library } = useWeb3React();
 
   const getEthBalance = async () => {
+
     function getBalance() {
       return new Promise((resolve) => {
         if (!library || !tokenAddress) {
@@ -89,6 +90,7 @@ export default function useBalance(
         const pow = new BigNumber("10").pow(new BigNumber(decimals));
         const decimalBalance = web3BNToFloatString(
           scrtBal,
+
           pow,
           4,
           BigNumber.ROUND_DOWN

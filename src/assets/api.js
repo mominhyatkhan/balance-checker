@@ -29,6 +29,7 @@ export const getEthExchangeRate = async () => {
 };
 
 export const getEgldExchangeRate = async () => {
+
   var requestOptions = { method: "GET", redirect: "follow" };
   return fetch(
     "https://api.coinbase.com/v2/exchange-rates?currency=EGLD",
@@ -44,6 +45,7 @@ export const getEgldExchangeRate = async () => {
 };
 
 export const getTonExchangeRate = async () => {
+
   var requestOptions = { method: "GET", redirect: "follow" };
   return fetch(
     "https://api.coinbase.com/v2/exchange-rates?currency=TON",
@@ -59,6 +61,7 @@ export const getTonExchangeRate = async () => {
 };
 
 export const getScrtExchangeRate = async () => {
+
   var requestOptions = { method: "GET", redirect: "follow" };
   return fetch(
     "https://api.binance.com/api/v3/ticker/price?symbol=SCRTUSDT",
