@@ -54,7 +54,7 @@ export default function Home() {
               onChange={(e) => setSelectedWallet(Wallets[e.target.value])}
             >
               {Wallets.map((wallet, index) => (
-                <option value={index} key={wallet.address}>
+                <option value={index} key={`${wallet.address}-${index}`}>
                   {wallet.name}
                 </option>
               ))}
@@ -64,7 +64,8 @@ export default function Home() {
           <label>Select the Token</label>
           <select onChange={(e) => setSelectedToken(TokenList[e.target.value])}>
             {TokenList.map((token, index) => (
-              <option value={index} key={token.address} selected={token.name === "Ethereum"}>
+              <option value={index} key={`${token.address}-${index}`}>
+
                 {token.name}
               </option>
             ))}
